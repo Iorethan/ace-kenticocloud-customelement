@@ -19,9 +19,9 @@
         editor.setTheme('ace/theme/xcode');
         editor.session.setMode('ace/mode/javascript');
 
-        if (initValue) textarea.value = initValue;
+        if (initValue) editor.setValue(initValue);
 
-        textarea.addEventListener('input', function () {
+        editor.addEventListener('change', function () {
 
             if (!isDisabled) {
                 // Send updated color to Kentico Cloud
