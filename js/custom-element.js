@@ -1,6 +1,8 @@
 (function () {
     var isDisabled = false;
     var editor;
+    var language;
+    var languageSelector = document.querySelector('#language');
 
     var updateDisabled = function (disabled) {
         isDisabled = disabled;
@@ -17,14 +19,30 @@
     var setupAce = function (initValue, config) {
         editor = ace.edit('editor');
         editor.setTheme('ace/theme/' + ((config && config.initTheme) ? config.initTheme : 'monokai'));
-        editor.session.setMode('ace/mode/' + ((config && config.initMode) ? config.initMode : 'javascript'));
+        if (initValue && initValue.code) editor.setValue(initValue.code);
 
-        if (initValue) editor.setValue(initValue);
+        if (initValue && initValue.language) {
+            language = initValue.language;
+        } else if (config && config.initMode) {
+            language = config.initMode;
+        } else {
+            language = 'javascript';
+        }
+
+        editor.session.setMode('ace/mode/' + language);
+
+        languageSelector.addEventListener('change', function () {
+            language = languageSelector.value;
+            editor.session.setMode('ace/mode/' + languageSelector.value);
+        });
 
         editor.addEventListener('change', function () {
             if (!isDisabled) {
                 // Send updated color to Kentico Cloud
-                CustomElement.setValue(editor.getValue());
+                CustomElement.setValue({
+                    language: language,
+                    code: editor.getValue()
+                });
             }
         });
 
