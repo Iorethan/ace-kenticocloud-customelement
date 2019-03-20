@@ -6,7 +6,12 @@ html{
 }
 body{
   overflow: hidden;
+  margin: 0;
+}
+.editor {
   min-height: 360px;
+  position: relative;
+  width: 100%;
 }
 #editor {
   margin: 0;
@@ -16,6 +21,17 @@ body{
   left: 0;
   right: 0;
   font-size: 14px;
+}
+.config {
+  margin: 0 0 16px;
+}
+.config__item {
+  width: 300px;
+  max-width: 100%; 
+}
+.config__item label {
+  padding: 0 0 2px;
+  display: block;
 }
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
   display:block;
