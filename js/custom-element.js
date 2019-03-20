@@ -16,9 +16,8 @@
 
     var setupAce = function (initValue) {
         editor = ace.edit('editor');
-        editor.setTheme('ace/theme/monokai');
+        editor.setTheme('ace/theme/textmate');
         editor.session.setMode('ace/mode/javascript');
-        editor.clearSelection();
 
         if (initValue) editor.setValue(initValue);
 
@@ -47,6 +46,7 @@
                 setupAce(element.value);
                 updateDisabled(element.disabled);
                 updateSize();
+                editor.clearSelection();
             });
             // React when the disabled state changes (e.g. when publishing the item)
             CustomElement.onDisabledChanged(updateDisabled);
