@@ -23,14 +23,16 @@ body{
   font-size: 14px;
 }
 .config {
-  margin: 0 0 16px;
+  margin: 8px;
 }
 .config__item {
   width: 300px;
   max-width: 100%; 
 }
 .config__item label {
-  padding: 0 0 2px;
+  font-size: 14px;
+  color: #9e9e9e;
+  line-height: 1.5em;
   display: block;
 }
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
