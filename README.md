@@ -1,5 +1,5 @@
 # Syntax Highlighter
-Syntax Highlighter is an editable text area enhanced by the [Ace Code Editor] (https://ace.c9.io/) to provide a programmer-friendly environment for writing code examples. Offers a fine selection of programming languages to be highlighted.
+Syntax Highlighter is an editable text area enhanced by the [Ace Code Editor](https://ace.c9.io/) to provide a programmer-friendly environment for writing code examples. Offers a fine selection of programming languages to be highlighted.
 
 ![Syntax Highlighter](example.png)
 

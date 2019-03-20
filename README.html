@@ -1,0 +1,31 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>README.md</title>
+      </head>
+      <body>
+        <h1 id="syntax-highlighter">Syntax Highlighter</h1>
+<p>Syntax Highlighter is an editable text area enhanced by the <a href="https://ace.c9.io/">Ace Code Editor</a> to provide a programmer-friendly environment for writing code examples. Offers a fine selection of programming languages to be highlighted.</p>
+<p><img src="example.png" alt="Syntax Highlighter"></p>
+<h1 id="usage">Usage</h1>
+<p>If you want to use the Syntax Highlighter in your project in Kentico Cloud, follow these steps:</p>
+<ul>
+<li>XX</li>
+<li>In Kentico Cloud open Content types tab</li>
+<li>Open / create a content model to which you want to add the Shopify product selector</li>
+<li>Add <strong>Custom element</strong> content element</li>
+<li>Open configuration of the content element</li>
+<li>Use following URL as Hosted code URL (HTTPS): <a href="https://kentico.github.io/custom-element-samples/Shopify/product-selector.html">https://kentico.github.io/custom-element-samples/Shopify/product-selector.html</a></li>
+<li>Provide the following JSON parameters for the custom element to connect it to your store, replace the macros with the actual values from Shopify admin UI</li>
+</ul>
+<pre><code>{
+    &quot;storeFrontAccessToken&quot;: &quot;&lt;YOUR ACCESS TOKEN&gt;&quot;,
+    &quot;apiEndpoint&quot;: &quot;https://&lt;YOUR STORE NAME&gt;.myshopify.com/api/graphql&quot;
+}
+</code></pre><h1 id="installation">Installation</h1>
+<p>Shopify product selector source code is in following repository: <a href="https://github.com/kenticomartinh/kc-shopify">https://github.com/kenticomartinh/kc-shopify</a></p>
+<p>If you want to adjust the implementation, first download <a href="https://github.com/kentico/custom-element-devkit">Kentico Cloud Custom Elements Devkit</a>. Source code of this selector needs be positioned within <code>/client/custom-elements</code> folder. For further instructions on devkit implementation, please refer to <a href="https://github.com/Kentico/custom-element-devkit/blob/master/readme.md">Custom Element Devkit README</a>.</p>
+<p><img src="https://kentico-ga-beacon.azurewebsites.net/api/UA-69014260-4/Kentico/custom-elements-samples/Shopify?pixel" alt="Analytics"></p>
+
+      </body>
+    </html>

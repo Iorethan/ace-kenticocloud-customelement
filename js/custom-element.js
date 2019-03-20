@@ -50,7 +50,7 @@
                     code: editor.getValue()
                 };
                 // Send stringified object with data to Kentico Cloud
-                CustomElement.setValue(value.code === '' ? null : JSON.stringify(value));
+                CustomElement.setValue(value.code ? JSON.stringify(value) : null);
             }
         });
 
