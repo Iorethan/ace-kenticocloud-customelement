@@ -39,4 +39,4 @@ You need to parse that value to get a proper object (i.e. in JavaScript with the
 
 ## Original repository
 
-Syntax Highlighter source code is in following repository: https://github.com/kenticomartinh/kc-shopify
+Syntax Highlighter source code is in following repository: https://github.com/MilanLund/ace-kenticocloud-customelement
