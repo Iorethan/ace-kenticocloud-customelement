@@ -16,9 +16,8 @@
 
     var setupAce = function (initValue, config) {
         editor = ace.edit('editor');
-        editor.setTheme('ace/theme/monokai');
-        editor.session.setMode('ace/mode/javascript');
-        console.log(config);
+        editor.setTheme('ace/theme/' + config.initTheme ? config.initTheme : 'monokai');
+        editor.session.setMode('ace/mode/' + config.initMode ? config.initMode : 'javascript');
 
         if (initValue) editor.setValue(initValue);
 
