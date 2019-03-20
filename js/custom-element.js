@@ -6,9 +6,9 @@
         var textarea = document.querySelector('textarea');
 
         if (disabled) {
-            textarea.disabled = false;
-        } else {
             textarea.disabled = true;
+        } else {
+            textarea.disabled = false;
         }
     };
 
@@ -35,7 +35,6 @@
         try {
             CustomElement.init((element, _context) => {
                 // Setup with initial value and disabled state
-                console.log(element.disabled);
                 setupAce(element.value);
                 updateDisabled(element.disabled);
                 updateSize();
@@ -46,7 +45,6 @@
             // Initialization with the Custom elements API failed 
             // (page displayed outside of the Kentico Cloud UI)
             console.error(err);
-            console.log('xxx');
             setupAce();
             updateDisabled(true);
         }
