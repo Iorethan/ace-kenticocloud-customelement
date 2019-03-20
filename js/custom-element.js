@@ -17,8 +17,11 @@
     };
 
     var setupAce = function (initValue, config) {
+        initValue = JSON.parse(initValue);
+        
         editor = ace.edit('editor');
         editor.setTheme('ace/theme/' + ((config && config.initTheme) ? config.initTheme : 'monokai'));
+
         if (initValue && initValue.code) editor.setValue(initValue.code);
 
         if (initValue && initValue.language) {
@@ -40,7 +43,12 @@
         editor.addEventListener('change', function () {
             if (!isDisabled) {
                 // Send updated color to Kentico Cloud
-                CustomElement.setValue('{"language": "' + language + '", "code": "'+ editor.getValue() + '"}');
+                var value = {
+                    language: language,
+                    code: editor.getValue()
+                };
+
+                CustomElement.setValue(JSON.stringify(value));
             }
         });
 
