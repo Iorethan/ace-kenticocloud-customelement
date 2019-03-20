@@ -5,7 +5,16 @@ html{
   -webkit-text-size-adjust:100%;
 }
 body{
-  margin:0;
+  overflow: hidden;
+}
+#editor {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 16px;
 }
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
   display:block;

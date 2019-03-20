@@ -1,26 +1,31 @@
 (function () {
     var isDisabled = false;
+    var editor;
 
     var updateDisabled = function (disabled) {
         isDisabled = disabled;
-        var textarea = document.querySelector('textarea');
 
-        if (disabled) {
-            textarea.disabled = true;
-        } else {
-            textarea.disabled = false;
+        if (editor) {
+            if (disabled) {
+                editor.setReadOnly(true);
+            } else {
+                editor.setReadOnly(false);
+            }
         }
     };
 
     var setupAce = function (initValue) {
-        var textarea = document.querySelector('textarea');
+        editor = ace.edit('editor');
+        editor.setTheme('ace/theme/xcode');
+        editor.session.setMode('ace/mode/javascript');
+
         if (initValue) textarea.value = initValue;
 
         textarea.addEventListener('input', function () {
 
             if (!isDisabled) {
                 // Send updated color to Kentico Cloud
-                CustomElement.setValue(textarea.value);
+                CustomElement.setValue(editor.getValue());
             }
         });
     };
