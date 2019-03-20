@@ -17,13 +17,16 @@
     };
 
     var setupAce = function (initValue, config) {
+        // Parse stringified data obtained from Kentico Cloud
         initValue = JSON.parse(initValue);
-        
+
+        // Init Ace editor with theme from config
         editor = ace.edit('editor');
         editor.setTheme('ace/theme/' + ((config && config.initTheme) ? config.initTheme : 'monokai'));
 
         if (initValue && initValue.code) editor.setValue(initValue.code);
 
+        // Define language that shoudl be used as syntax highlight
         if (initValue && initValue.language) {
             language = initValue.language;
         } else if (config && config.initMode) {
@@ -42,12 +45,11 @@
 
         editor.addEventListener('change', function () {
             if (!isDisabled) {
-                // Send updated color to Kentico Cloud
                 var value = {
                     language: language,
                     code: editor.getValue()
                 };
-
+                // Send stringified object with data to Kentico Cloud
                 CustomElement.setValue(JSON.stringify(value));
             }
         });
@@ -59,13 +61,12 @@
     var updateSize = function () {
         // Update the Custom element height in the Kentico Cloud UI
         var height = document.querySelector('html').offsetHeight;
-        
         CustomElement.setHeight(height);
     };
 
     var initCustomElement = function () {
         try {
-            CustomElement.init((element, _context) => {
+            CustomElement.init(function (element, _context) {
                 // Setup with initial value and disabled state
                 setupAce(element.value, element.config);
                 updateDisabled(element.disabled);
