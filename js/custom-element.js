@@ -35,7 +35,14 @@
 
     var updateSize = function () {
         // Update the Custom element height in the Kentico Cloud UI
-        var height = document.querySelector('html').offsetHeight;
+        var height;
+        
+        if (editor) {
+            height = editor.renderer.layerConfig.maxHeight;
+        } else {
+            height = document.querySelector('html').offsetHeight;
+        }
+        
         CustomElement.setHeight(height);
     };
 
