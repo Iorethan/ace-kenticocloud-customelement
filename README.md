@@ -22,8 +22,8 @@ If you want to use the Syntax Highlighter in your project in Kentico Cloud, foll
 }
 ```
 
-* **<THEME CODENAME>** is a filename substring prefixed by **theme-** of a file located in the **ace** folder (i.e. textmate)
-* **<PROGRAMMING LANGUAGE CODENAME>** is a filename substring prefixed by **mode-** of a file located in the **ace** folder (i.e. plain_text)
+* **THEME CODENAME** is a filename substring prefixed by **theme-** of a file located in the **ace** folder (i.e. textmate)
+* **PROGRAMMING LANGUAGE CODENAME** is a filename substring prefixed by **mode-** of a file located in the **ace** folder (i.e. plain_text)
 
 ## Obtaining value
 
