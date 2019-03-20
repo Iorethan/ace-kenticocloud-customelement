@@ -29,6 +29,7 @@
             language = 'javascript';
         }
 
+        languageSelector.value = language;
         editor.session.setMode('ace/mode/' + language);
 
         languageSelector.addEventListener('change', function () {
