@@ -40,7 +40,7 @@
         editor.addEventListener('change', function () {
             if (!isDisabled) {
                 // Send updated color to Kentico Cloud
-                CustomElement.setValue('"language": "' + language + '", "code": "'+ editor.getValue() + '"');
+                CustomElement.setValue('{"language": "' + language + '", "code": "'+ editor.getValue() + '"}');
             }
         });
 
