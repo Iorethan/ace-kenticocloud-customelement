@@ -35,6 +35,7 @@
         try {
             CustomElement.init((element, _context) => {
                 // Setup with initial value and disabled state
+                console.log('yyy');
                 setupAce(element.value);
                 updateDisabled(element.disabled);
                 updateSize();
@@ -45,6 +46,7 @@
             // Initialization with the Custom elements API failed 
             // (page displayed outside of the Kentico Cloud UI)
             console.error(err);
+            console.log('xxx');
             setupAce();
             updateDisabled(true);
         }
