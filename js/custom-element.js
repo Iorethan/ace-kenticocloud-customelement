@@ -14,10 +14,11 @@
         }
     };
 
-    var setupAce = function (initValue) {
+    var setupAce = function (initValue, config) {
         editor = ace.edit('editor');
         editor.setTheme('ace/theme/monokai');
         editor.session.setMode('ace/mode/javascript');
+        console.log(config);
 
         if (initValue) editor.setValue(initValue);
 
@@ -43,10 +44,10 @@
         try {
             CustomElement.init((element, _context) => {
                 // Setup with initial value and disabled state
-                setupAce(element.value);
+                setupAce(element.value, element.config);
                 updateDisabled(element.disabled);
                 updateSize();
-                editor.clearSelection();
+                if (editor) editor.clearSelection(); 
             });
             // React when the disabled state changes (e.g. when publishing the item)
             CustomElement.onDisabledChanged(updateDisabled);
