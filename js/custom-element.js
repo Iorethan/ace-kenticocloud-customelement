@@ -15,11 +15,11 @@
     };
 
     var setupAce = function (initValue, config) {
-        console.log(config);
+        
         editor = ace.edit('editor');
         editor.setTheme('ace/theme/' + config.initTheme ? config.initTheme : 'monokai');
         editor.session.setMode('ace/mode/' + config.initMode ? config.initMode : 'javascript');
-
+        console.log(config);
         if (initValue) editor.setValue(initValue);
 
         editor.addEventListener('change', function () {
