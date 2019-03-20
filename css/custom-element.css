@@ -6,6 +6,7 @@ html{
 }
 body{
   overflow: hidden;
+  min-height: 360px;
 }
 #editor {
   margin: 0;
@@ -15,7 +16,6 @@ body{
   left: 0;
   right: 0;
   font-size: 16px;
-  min-height: 360px;
 }
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
   display:block;

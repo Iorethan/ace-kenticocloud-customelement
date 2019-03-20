@@ -28,6 +28,9 @@
                 CustomElement.setValue(editor.getValue());
             }
         });
+
+        // React on window resize to adjust the height
+        window.addEventListener('resize', updateSize);
     };
 
     var updateSize = function () {
