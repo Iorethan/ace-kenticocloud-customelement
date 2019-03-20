@@ -22,7 +22,7 @@
         if (initValue) editor.setValue(initValue);
 
         editor.addEventListener('change', function () {
-
+            updateSize();
             if (!isDisabled) {
                 // Send updated color to Kentico Cloud
                 CustomElement.setValue(editor.getValue());
@@ -36,7 +36,7 @@
     var updateSize = function () {
         // Update the Custom element height in the Kentico Cloud UI
         var height;
-        
+
         if (editor) {
             height = editor.renderer.layerConfig.maxHeight;
         } else {
