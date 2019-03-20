@@ -10,11 +10,11 @@
         } else {
             textarea.disabled = true;
         }
-    }
+    };
 
     var setupAce = function (initValue) {
         var textarea = document.querySelector('textarea');
-        textarea.value = initValue;
+        if (initValue) textarea.value = initValue;
 
         textarea.addEventListener('input', function () {
 
@@ -23,13 +23,13 @@
                 CustomElement.setValue(textarea.value);
             }
         });
-    }
+    };
 
     var updateSize = function () {
         // Update the Custom element height in the Kentico Cloud UI
         var height = document.querySelector('html').offsetHeight;
         CustomElement.setHeight(height);
-    }
+    };
 
     var initCustomElement = function () {
         try {
@@ -48,7 +48,7 @@
             setupAce();
             updateDisabled(true);
         }
-    }
+    };
 
     initCustomElement();
 })();
