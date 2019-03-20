@@ -35,7 +35,7 @@
         try {
             CustomElement.init((element, _context) => {
                 // Setup with initial value and disabled state
-                console.log('yyy');
+                console.log(element.disabled);
                 setupAce(element.value);
                 updateDisabled(element.disabled);
                 updateSize();
