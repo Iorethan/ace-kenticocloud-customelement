@@ -1,40 +1,14 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>JSFiddle-Kentico Cloud Cutsom element</title>
-    <meta name="author" content="Milan Lund">
-</head>
-
-<body>
-    <script>
-        function ajax_get(url, callback) {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    console.log('responseText:' + xmlhttp.responseText);
-                    try {
-                        var data = xmlhttp.responseText;
-                    } catch (err) {
-                        console.log(err.message + " in " + xmlhttp.responseText);
-                        return;
-                    }
-                    callback(data);
-                }
-            };
-
-            xmlhttp.open("GET", url, true);
-            xmlhttp.send();
-        }
-
-        ajax_get('https://jsfiddle.net/user/get_username/', function (data) {
-            console.log(data);
-        });
-
-        ajax_get('https://jsfiddle.net/api/user/milanlund/demo/list.json', function (data) {
-            console.log(data);
-        });
-    </script>
-</body>
-
+    <head>
+        <meta charset="utf-8">
+        <title>Ace-KC Custom element</title>
+        <meta name="author" content="Milan Lund">
+        <link rel="stylesheet" type="text/css" href="./css/custom-element.css">
+        <script src="https://app.kenticocloud.com/js-api/custom-element.js" defer></script>
+        <script src="./js/custom-element.js" defer></script>
+    </head>
+    <body>
+        <textarea></textarea>
+    </body>
 </html>
