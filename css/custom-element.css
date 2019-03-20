@@ -6,7 +6,7 @@ html{
 }
 body{
   overflow: hidden;
-  min-height: 300px;
+  min-height: 360px;
 }
 #editor {
   margin: 0;
