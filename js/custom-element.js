@@ -10,8 +10,10 @@
         if (editor) {
             if (disabled) {
                 editor.setReadOnly(true);
+                languageSelector.setAttribute('disabled', 'disabled');
             } else {
                 editor.setReadOnly(false);
+                languageSelector.removeAttribute('disabled');
             }
         }
     };
@@ -22,7 +24,7 @@
 
         // Init Ace editor with theme from config
         editor = ace.edit('editor');
-        editor.setTheme('ace/theme/' + ((config && config.initTheme) ? config.initTheme : 'monokai'));
+        editor.setTheme('ace/theme/' + ((config && config.initTheme) ? config.initTheme : 'textmate'));
 
         if (initValue && initValue.code) editor.setValue(initValue.code);
 
@@ -32,7 +34,7 @@
         } else if (config && config.initMode) {
             language = config.initMode;
         } else {
-            language = 'javascript';
+            language = 'plain_text';
         }
 
         languageSelector.value = language;
